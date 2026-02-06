@@ -62,7 +62,7 @@ static int ShoeShop_count_items(Shop* self) {
 static bool ShoeShop_clear(Shop* self, int row) {
 	bool rem = ((ShoeShop*)self)->shelf[row] > 0;
 	((ShoeShop*)self)->shelf[row] = 0;
-	return !rem; // return true if the item was cleared (i.e., was in stock before clearing)
+	return rem; // return true if the item was cleared (i.e., was in stock before clearing)
 }
 
 static void ShoeShop_destroy(Shop* self) {
